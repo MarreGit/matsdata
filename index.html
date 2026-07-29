@@ -9,11 +9,101 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="assets/css/bss-overrides.css">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      rel="stylesheet"
+      id="silktide-consent-manager-css"
+      href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.css"
+      integrity="sha384-EdMq+R+YOnsbelo08wPenoTlnxbAyxI11NMIxzugx/qAsbh64KcOkqxYqq6pfvO/"
+      crossorigin="anonymous"
+    />
+    <style id="silktide-consent-manager-overrides">
+      #stcm-wrapper {
+        --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+        --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+        --primaryColor: #533be2;
+        --backgroundColor: #ffffff;
+        --textColor: #4b494b;
+        --backdropBackgroundColor: #00000033;
+        --backdropBackgroundBlur: 0px;
+        --iconColor: #533be2;
+        --iconBackgroundColor: #ffffff;
+      }
+    </style>
+    <script
+      src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.1/silktide-consent-manager.js"
+      integrity="sha384-5Pt34uiIbCsvfiiZXoLi4HRf/YBXjr9c8e+gYeVo9smUaInNHYVtc8NZ8wUnXJIq"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.silktideConsentManager.init({
+        backdrop: {
+          show: true,
+        },
+        icon: {
+          position: "bottomLeft",
+        },
+        prompt: {
+          position: "bottomRight",
+        },
+        consentTypes: [
+          {
+            id: "essential",
+            label: "Grundläggande",
+            description:
+              "<p>Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt och kan inte stängas av. De hjälper till med saker som att logga in och ställa in dina integritetsinställningar.</p>",
+            required: true,
+            onAccept: function () {
+              console.log(
+                "Add logic for the required Essential consent type here",
+              );
+            },
+          },
+          {
+            id: "analytics",
+            label: "Analyser",
+            description:
+              "<p>Dessa cookies hjälper oss att förbättra webbplatsen genom att spåra vilka sidor som är mest populära och hur besökare navigerar runt på webbplatsen.</p>",
+            defaultValue: true,
+            gtag: "analytics_storage",
+          },
+          {
+            id: "marketing",
+            label: "Marknadsföring",
+            description:
+              "<p>Dessa cookies används av oss och våra annonspartners för att visa dig relevanta annonser på denna webbplats och på andra ställen, och för att mäta hur dessa kampanjer presterar.</p>",
+            gtag: ["ad_storage", "ad_user_data", "ad_personalization"],
+          },
+        ],
+        text: {
+          prompt: {
+            description:
+              "<p>Vi använder cookies på vår webbplats för att förbättra din användarupplevelse, tillhandahålla personligt anpassat innehåll och analysera vår trafik.</p>",
+            acceptAllButtonText: "Acceptera alla",
+            acceptAllButtonAccessibleLabel: "Acceptera alla cookies",
+            rejectNonEssentialButtonText: "Avvisa icke-nödvändiga",
+            rejectNonEssentialButtonAccessibleLabel:
+              "Avvisa alla icke-nödvändiga cookies",
+            preferencesButtonText: "Inställningar",
+            preferencesButtonAccessibleLabel: "Växla inställningar",
+          },
+          preferences: {
+            title: "Anpassa dina cookieinställningar",
+            description:
+              "<p>Vi respekterar din rätt till integritet. Du kan välja att inte tillåta vissa typer av cookies. Dina cookie-inställningar gäller för hela vår webbplats.</p>",
+            saveButtonText: "Spara och stäng",
+            saveButtonAccessibleLabel: "Spara dina cookie-inställningar",
+            creditLinkText: "Få den här bannern gratis",
+            creditLinkAccessibleLabel: "Få den här bannern gratis",
+          },
+        },
+      });
+    </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md sticky-top bg-body pt-0 mb-0 pb-0" style="backdrop-filter: blur(0px);-webkit-backdrop-filter: blur(0px);filter: blur(0px);">
-        <div class="container"><a href="index.html"><img class="img-fluid" width="212" height="98" src="assets/img/Logga2.svg"></a><a class="navbar-brand d-flex align-items-center" href="#"></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a href="index.html"><img class="img-fluid" alt="mats data logo logotyp" width="212" height="98" src="assets/img/Logga2.svg"></a><a class="navbar-brand d-flex align-items-center" href="#"></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html" style="font-size: 18px;">HEM</a></li>
@@ -25,7 +115,7 @@
             </div>
         </div>
     </nav>
-    <section class="text-white py-4 py-xl-5" style="background: url(&quot;assets/img/kvinna_it_laptop.jpg&quot;) no-repeat, var(--bs-info);filter: blur(0px) brightness(100%);opacity: 1;backdrop-filter: brightness(111%) contrast(102%) grayscale(51%);-webkit-backdrop-filter: brightness(111%) contrast(102%) grayscale(51%);background-size: cover, auto;">
+    <section class="text-white py-4 py-xl-5" style="background: url(&quot;assets/img/kvinna_it_laptop.webp&quot;) center / cover no-repeat, var(--bs-info);filter: blur(0px) brightness(100%);opacity: 1;backdrop-filter: brightness(111%) contrast(102%) grayscale(51%);-webkit-backdrop-filter: brightness(111%) contrast(102%) grayscale(51%);">
         <div class="container">
             <div class="border rounded border-0 d-flex flex-column justify-content-center align-items-center ps-4 pe-4 pt-5 pb-5" style="background: linear-gradient(rgba(0,123,255,0.2), rgba(0,123,255,0.2));height: 500px;">
                 <div class="row mt-0 pt-0">
@@ -177,7 +267,7 @@
     <section class="py-4 py-xl-5">
         <div class="container">
             <div class="row" style="text-align: center;">
-                <div class="col-md-6" style="text-align: center;transform: perspective(0px) scale(0.72);"><img src="assets/img/mats_lönnström.jpg" width="271" height="253" style="border-radius: 25px;box-shadow: 0px 0px 20px;"></div>
+                <div class="col-md-6" style="text-align: center;transform: perspective(0px) scale(0.72);"><img alt="mats lönnström porträtt foto" src="assets/img/mats_lönnström.jpg" width="271" height="253" style="border-radius: 25px;box-shadow: 0px 0px 20px;"></div>
                 <div class="col-md-6">
                     <h3 style="text-align: left;">Om mig</h3>
                     <p class="px-2" style="text-align: left;"><br>Hej! Jag heter Mats.<br><br>Har du några problem med din dator eller mobil är det bara att höra av dig. Jag tror på personlig kontakt. Därför sker all kontakt via telefon. Du ringer direkt till mig och får prata med en riktig person som lyssnar på ditt problem.</p><button class="btn btn-primary fs-5 me-2 mt-3 mb-4 px-4 py-2" type="button" style="background: var(--bs-primary);text-align: center;">Läs mer om mig -&gt;</button>
